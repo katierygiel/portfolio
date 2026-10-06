@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Katie Rygiel — Creative Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F5F2EE;
+  --bg2:#EDEAE5;
+  --white:#FFFFFF;
+  --black:#111318;
+  --maroon:#6F2035;
+  --maroon2:#8B2A44;
+  --maroon-dim:rgba(111,32,53,0.07);
+  --gray:#6B7280;
+  --gray2:#9CA3AF;
+  --border:rgba(0,0,0,0.07);
+  --border2:rgba(0,0,0,0.12);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--black);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cursor{position:fixed;width:10px;height:10px;background:var(--maroon);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s}
+#cursor.expand{width:64px;height:64px;background:transparent;border:1.5px solid var(--maroon);display:flex;align-items:center;justify-content:center}
+#cursor-label{font-family:'DM Mono',monospace;font-size:.46rem;letter-spacing:.14em;color:var(--maroon);text-transform:uppercase;opacity:0;transition:opacity .2s}
+#cursor.expand #cursor-label{opacity:1}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(245,242,238,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.04em;color:var(--black);text-decoration:none;text-transform:uppercase}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nav-links a{color:var(--gray);text-decoration:none;font-family:'DM Mono',monospace;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--black)}
+.nav-cta{background:var(--maroon)!important;color:#fff!important;padding:.48rem 1.2rem;border-radius:3px;transition:background .2s!important}
+.nav-cta:hover{background:var(--maroon2)!important}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:9rem 4rem 5rem;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;top:-20%;right:-10%;width:60vw;height:80vh;background:radial-gradient(ellipse at 60% 40%,rgba(111,32,53,.06) 0%,transparent 65%);pointer-events:none}
+.hero-left{position:relative;z-index:2}
+.hero-kicker{font-family:'DM Mono',monospace;font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1.8rem;display:flex;align-items:center;gap:.8rem}
+.hero-kicker::before{content:'';width:2rem;height:1.5px;background:var(--maroon)}
+.hero-name-first{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.8rem,4.5vw,4.6rem);line-height:1.05;letter-spacing:-.02em;color:var(--black);display:block}
+.hero-name-last{font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;font-size:clamp(2.8rem,4.5vw,4.6rem);line-height:1.05;letter-spacing:-.02em;font-style:italic;color:var(--gray);display:block}
+.hero-underline{width:3.5rem;height:3px;background:var(--maroon);margin-top:1rem;border-radius:2px}
+.hero-title-badge{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;padding:.35rem .9rem;background:var(--maroon-dim);border:1px solid rgba(111,32,53,.18);border-radius:3px;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--maroon)}
+.hero-tagline{font-size:.97rem;font-weight:400;color:var(--gray);line-height:1.8;max-width:480px;margin:1.5rem 0 2rem}
+.hero-tagline strong{color:var(--black);font-weight:600}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+
+/* HERO RIGHT */
+.hero-right{display:flex;align-items:flex-end;justify-content:center;gap:1.5rem;position:relative;z-index:2}
+.headshot-wrap{position:relative;flex-shrink:0}
+.headshot-frame{width:210px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:var(--bg2);border:1px solid var(--border2);box-shadow:0 16px 48px rgba(0,0,0,.1)}
+.headshot-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.headshot-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem}
+.headshot-ph svg{opacity:.2}
+.headshot-ph span{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray2)}
+.headshot-accent{position:absolute;bottom:-8px;right:-8px;width:48px;height:48px;border:2.5px solid var(--maroon);border-radius:8px;z-index:-1}
+.phone-wrap{flex-shrink:0}
+.phone-outer{width:170px;background:linear-gradient(160deg,#2a2a2e,#1a1a1e);border-radius:38px;padding:7px;border:1px solid rgba(255,255,255,.1);box-shadow:0 16px 44px rgba(0,0,0,.22)}
+.phone-inner{background:#000;border-radius:32px;overflow:hidden;position:relative;aspect-ratio:9/19.5}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:70px;height:20px;background:#1a1a1e;border-radius:0 0 14px 14px;z-index:10}
+.phone-status{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:5px 12px 0;z-index:5;pointer-events:none}
+.phone-time{font-size:7px;font-weight:700;color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
+.phone-screen{width:100%;height:100%;overflow:hidden}
+.ig-feed{display:flex;flex-direction:column;animation:feed-scroll 65s linear infinite}
+.ig-post{width:100%;flex-shrink:0;background:#111;border-bottom:1px solid #1a1a1a}
+.ig-post-header{display:flex;align-items:center;gap:6px;padding:6px 8px}
+.ig-avatar{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--maroon);flex-shrink:0}
+.ig-handle{font-size:6.5px;font-weight:600;color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
+.ig-dot{font-size:5px;color:#555;margin-left:auto}
+.ig-actions{display:flex;gap:8px;padding:5px 8px 8px;font-size:10px;color:rgba(255,255,255,.6)}
+@keyframes feed-scroll{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+
+/* BUTTONS */
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;background:var(--maroon);color:#fff;text-decoration:none;font-family:'DM Mono',monospace;font-weight:500;font-size:.68rem;padding:.82rem 1.7rem;border-radius:3px;letter-spacing:.08em;text-transform:uppercase;transition:background .2s,transform .2s,box-shadow .2s;border:none;cursor:none}
+.btn-p:hover{background:var(--maroon2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(111,32,53,.25)}
+.btn-g{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--black);text-decoration:none;font-family:'DM Mono',monospace;font-weight:500;font-size:.68rem;padding:.82rem 1.7rem;border-radius:3px;border:1.5px solid var(--border2);letter-spacing:.08em;text-transform:uppercase;transition:border-color .2s,transform .2s,color .2s;cursor:none}
+.btn-g:hover{border-color:var(--maroon);color:var(--maroon);transform:translateY(-2px)}
+
+/* MARQUEE */
+.marquee-divider{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.85rem 0;background:var(--white)}
+.marquee-track{display:flex;width:max-content;animation:marquee 26s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.m-item{display:flex;align-items:center;gap:1.2rem;padding:0 2rem;white-space:nowrap}
+.m-text{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray2)}
+.m-text.hl{color:var(--maroon);font-weight:500}
+.m-dot{width:4px;height:4px;border-radius:50%;background:var(--maroon);flex-shrink:0}
+
+/* SECTION */
+.sec{padding:6rem 4rem;position:relative;z-index:1}
+.eyebrow{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--maroon);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.eyebrow::before{content:'';display:block;width:1.8rem;height:1.5px;background:var(--maroon)}
+h2.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,3.2vw,2.8rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:.5rem;color:var(--black)}
+
+/* ABOUT */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;max-width:1100px;margin:0 auto}
+.about-text p{color:var(--gray);line-height:1.85;margin-bottom:1.1rem;font-size:.97rem}
+.about-text p strong{color:var(--black);font-weight:600}
+
+/* SKILLS */
+.skills-section{margin-top:2rem}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.skill-group{}
+.skill-group-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);margin-bottom:.55rem;display:flex;align-items:center;gap:.5rem}
+.skill-group-label::before{content:'';display:block;width:1.2rem;height:1.5px;background:var(--maroon)}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem}
+.chip{padding:.28rem .75rem;border:1.5px solid var(--border2);border-radius:3px;font-family:'DM Mono',monospace;font-size:.59rem;color:var(--gray);letter-spacing:.06em;transition:border-color .2s,color .2s;cursor:default}
+.chip:hover{border-color:var(--maroon);color:var(--maroon)}
+.chip.primary{border-color:rgba(111,32,53,.3);color:var(--maroon)}
+
+/* ABOUT RIGHT */
+.ab-row{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--border);transition:padding-left .2s}
+.ab-row:first-child{padding-top:0}
+.ab-row:last-child{border-bottom:none}
+.ab-row:hover{padding-left:.4rem}
+.ab-icon{width:2rem;height:2rem;border-radius:5px;background:var(--maroon-dim);border:1px solid rgba(111,32,53,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.ab-label{font-family:'DM Mono',monospace;font-size:.57rem;color:var(--maroon);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.15rem}
+.ab-val{font-size:.88rem;color:var(--black);font-weight:600}
+.ab-sub{font-size:.78rem;color:var(--gray);margin-top:.1rem;line-height:1.5}
+
+/* WORK */
+#work{background:var(--bg)}
+.work-top{max-width:1200px;margin:0 auto 2.5rem}
+.work-subtitle{color:var(--gray);font-size:.92rem;margin-top:.4rem;line-height:1.6}
+
+/* PROJECT GRID */
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;max-width:1200px;margin:0 auto}
+.pc{border-radius:8px;overflow:hidden;cursor:none;text-decoration:none;color:inherit;position:relative;display:block;background:var(--white);border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .32s cubic-bezier(.2,0,.2,1),box-shadow .32s}
+.pc:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.1)}
+.pc-a{grid-column:1/8}.pc-b{grid-column:8/13}.pc-c{grid-column:1/5}.pc-d{grid-column:5/9}.pc-e{grid-column:9/13}.pc-f{grid-column:1/7}
+.pc.hidden{display:none}
+
+/* CARD THUMBNAIL — controlled crop for grid only */
+.pc-img{width:100%;overflow:hidden;position:relative;background:var(--bg2)}
+.pc-a .pc-img,.pc-b .pc-img{aspect-ratio:16/9}
+.pc-c .pc-img,.pc-d .pc-img,.pc-e .pc-img{aspect-ratio:4/3}
+.pc-f .pc-img{aspect-ratio:16/7}
+.pc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.2,0,.2,1)}
+.pc:hover .pc-img img{transform:scale(1.04)}
+.pc-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(111,32,53,.88) 0%,rgba(111,32,53,.1) 50%,transparent 100%);opacity:0;transition:opacity .32s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem}
+.pc:hover .pc-overlay{opacity:1}
+.pc-ov-client{font-family:'DM Mono',monospace;font-size:.54rem;color:rgba(255,255,255,.7);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.2rem}
+.pc-ov-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;color:#fff;line-height:1.2}
+
+/* PLACEHOLDER GRADIENTS */
+.ph-copa{background:linear-gradient(150deg,#d4e8d4,#b8d4b8)}
+.ph-pres{background:linear-gradient(150deg,#e8e4d4,#d4ccb8)}
+.ph-hgp{background:linear-gradient(150deg,#d4e8e0,#b8d4c8)}
+.ph-boulders{background:linear-gradient(150deg,#d4d4e8,#b8b8d4)}
+.ph-rcnj{background:linear-gradient(150deg,#e8d4d8,#d4b8bc)}
+.ph-illus{background:linear-gradient(150deg,#ddd4e8,#c8b8d4)}
+
+.ph-inner{width:100%;height:100%;min-height:130px;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.6rem;font-weight:500;color:rgba(0,0,0,.18);letter-spacing:.1em;text-align:center;padding:1rem;line-height:1.4;text-transform:uppercase}
+.pc-tag{position:absolute;top:.7rem;left:.7rem;background:var(--maroon);color:#fff;font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .5rem;border-radius:2px;z-index:2}
+.pc-body{padding:1rem 1.2rem 1.2rem}
+.pc-client{font-family:'DM Mono',monospace;font-size:.57rem;color:var(--maroon);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+.pc-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:1rem;color:var(--black);line-height:1.2;margin-bottom:.3rem}
+.pc-desc{font-size:.8rem;color:var(--gray);line-height:1.6}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:.7rem;padding-top:.6rem;border-top:1px solid var(--border)}
+.pc-year{font-family:'DM Mono',monospace;font-size:.55rem;color:var(--gray2)}
+.pc-arrow{width:1.8rem;height:1.8rem;border:1.5px solid var(--border2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--gray);transition:all .2s;flex-shrink:0}
+.pc:hover .pc-arrow{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.pc{opacity:0;transform:translateY(22px)}
+.pc.in{opacity:1;transform:translateY(0);transition:opacity .45s ease,transform .45s ease}
+.pc.in:hover{transform:translateY(-5px)}
+
+/* FILMSTRIP */
+#filmstrip{overflow:hidden;padding:3rem 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.fs-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);padding:0 4rem 1rem;display:flex;align-items:center;gap:.7rem}
+.fs-label::before{content:'';width:1.8rem;height:1.5px;background:var(--maroon)}
+.fs-track{display:flex;gap:.6rem;width:max-content;animation:fs-scroll 40s linear infinite}
+.fs-track:hover{animation-play-state:paused}
+@keyframes fs-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.fs-frame{width:215px;height:145px;flex-shrink:0;border-radius:5px;overflow:hidden;border:1px solid var(--border);position:relative;background:var(--bg2)}
+.fs-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.fs-frame:hover img{transform:scale(1.06)}
+.fs-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:.6rem;color:rgba(0,0,0,.15);letter-spacing:.1em;text-transform:uppercase}
+
+/* CONTACT */
+#contact{background:var(--bg)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;max-width:1100px;margin:0 auto;align-items:start}
+.co-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,3.2vw,2.8rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:1.2rem;color:var(--black)}
+.co-sub{color:var(--gray);font-size:.97rem;line-height:1.78;margin-bottom:2rem}
+.co-links{display:flex;flex-direction:column;gap:.4rem}
+.clink{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;border:1.5px solid var(--border2);border-radius:4px;color:var(--gray);text-decoration:none;font-size:.88rem;font-weight:500;background:var(--white);transition:all .22s}
+.clink:hover{border-color:var(--maroon);color:var(--maroon);padding-left:1.5rem}
+.clink-arr{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--maroon)}
+.co-form{display:flex;flex-direction:column;gap:.8rem}
+.co-form input,.co-form textarea{background:var(--white);border:1.5px solid var(--border2);border-radius:4px;color:var(--black);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;padding:.85rem 1rem;outline:none;transition:border-color .2s;width:100%}
+.co-form input:focus,.co-form textarea:focus{border-color:var(--maroon)}
+.co-form textarea{min-height:110px;resize:vertical}
+.co-form input::placeholder,.co-form textarea::placeholder{color:var(--gray2)}
+
+/* FOOTER */
+footer{background:var(--black);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer p{font-family:'DM Mono',monospace;font-size:.62rem;color:rgba(255,255,255,.3);letter-spacing:.08em}
+footer a{color:var(--maroon);text-decoration:none}
+footer a:hover{color:#fff}
+
+/* MODAL OVERLAY */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(8,10,14,.94);backdrop-filter:blur(14px);align-items:flex-start;justify-content:center;padding:2rem;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border:1px solid var(--border2);border-radius:10px;max-width:920px;width:100%;position:relative;margin:auto}
+.modal-close{position:absolute;top:.9rem;right:.9rem;background:rgba(255,255,255,.92);border:1px solid var(--border2);color:var(--black);width:2rem;height:2rem;border-radius:50%;font-size:.9rem;cursor:none;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;z-index:20}
+.modal-close:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+
+/* MODAL HEADER */
+.modal-header{padding:2rem 2.2rem 1.4rem;border-bottom:1px solid var(--border)}
+.modal-tag{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--maroon);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.3rem}
+.modal-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.7rem;letter-spacing:-.02em;line-height:1.15;color:var(--black);margin-bottom:.2rem}
+.modal-role{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase}
+
+/* MODAL META */
+.modal-meta{display:flex;flex-wrap:wrap;gap:1.5rem;padding:1.2rem 2.2rem;border-bottom:1px solid var(--border);background:var(--bg)}
+.meta-item{}
+.meta-label{font-family:'DM Mono',monospace;font-size:.56rem;color:var(--maroon);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.2rem}
+.meta-val{font-size:.82rem;color:var(--black);font-weight:500;line-height:1.5}
+
+/* MODAL BODY */
+.modal-body{padding:1.6rem 2.2rem 2.4rem}
+
+/* CASE STUDY SECTIONS */
+.cs-section{margin-bottom:1.4rem}
+.cs-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+.cs-label::before{content:'';display:block;width:1.2rem;height:1.5px;background:var(--maroon)}
+.cs-text{color:var(--gray);font-size:.92rem;line-height:1.8}
+.cs-text strong{color:var(--black);font-weight:600}
+
+/* STATS */
+.modal-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin:1.4rem 0}
+.stat-box{background:var(--maroon-dim);border:1px solid rgba(111,32,53,.15);border-radius:5px;padding:.9rem .8rem;text-align:center}
+.stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem;color:var(--maroon);line-height:1}
+.stat-label{font-family:'DM Mono',monospace;font-size:.5rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;line-height:1.4}
+
+/* TOOLS ROW */
+.modal-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
+.tool-chip{padding:.25rem .7rem;background:var(--bg);border:1px solid var(--border2);border-radius:2px;font-family:'DM Mono',monospace;font-size:.58rem;color:var(--gray);letter-spacing:.06em}
+
+/* ASSETS SECTION */
+.assets-section{margin-top:1.6rem;padding-top:1.6rem;border-top:1px solid var(--border)}
+.assets-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--maroon);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.assets-label::before{content:'';display:block;width:1.2rem;height:1.5px;background:var(--maroon)}
+
+/* ASSET CAROUSEL */
+.asset-carousel{position:relative}
+.asset-track-wrap{overflow:hidden;border-radius:6px;background:var(--bg2)}
+.asset-track{display:flex;transition:transform .42s cubic-bezier(.4,0,.2,1)}
+.asset-slide{flex:0 0 100%;display:flex;align-items:center;justify-content:center;background:var(--bg2);min-height:200px;padding:1rem}
+
+/* CRITICAL: show full image, never crop */
+.asset-slide img{
+  max-width:100%;
+  max-height:80vh;
+  width:auto;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  border-radius:4px;
+}
+
+/* PDF embed */
+.asset-slide iframe{
+  width:100%;
+  height:75vh;
+  border:none;
+  border-radius:4px;
+  display:block;
+}
+
+.asset-nav{display:flex;align-items:center;justify-content:space-between;margin-top:.8rem}
+.asset-nav-btns{display:flex;gap:.5rem}
+.asset-btn{background:var(--white);border:1.5px solid var(--border2);color:var(--black);width:2.4rem;height:2.4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:none;font-size:1rem;transition:background .2s,border-color .2s,color .2s;font-weight:600}
+.asset-btn:hover{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.asset-btn:disabled{opacity:.3;pointer-events:none}
+.asset-counter{font-family:'DM Mono',monospace;font-size:.65rem;color:var(--gray);letter-spacing:.08em}
+.asset-dots{display:flex;gap:.35rem;align-items:center}
+.asset-dot{width:6px;height:6px;border-radius:50%;background:var(--border2);cursor:none;transition:background .2s,transform .2s;border:none;padding:0}
+.asset-dot.active{background:var(--maroon);transform:scale(1.35)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  #hero{grid-template-columns:1fr;padding:7rem 1.5rem 3rem;gap:2.5rem}
+  .hero-right{justify-content:center}
+  .sec{padding:4rem 1.5rem}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .work-grid{display:flex;flex-direction:column}
+  .modal-stats{grid-template-columns:repeat(2,1fr)}
+  .skills-grid{grid-template-columns:1fr}
+  footer{padding:1.5rem}
+  .modal-overlay{padding:1rem}
+  .modal-header,.modal-body,.modal-meta{padding-left:1.2rem;padding-right:1.2rem}
+}
+</style>
+</head>
+<body>
+<div id="cursor"><span id="cursor-label">View</span></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Katie Rygiel</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">Creative Services · Digital Content · Brand & Design</div>
+    <div>
+      <span class="hero-name-first">Katie</span>
+      <span class="hero-name-last">Rygiel.</span>
+      <div class="hero-underline"></div>
+    </div>
+    <div class="hero-title-badge">
+      <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><circle cx="4.5" cy="4.5" r="3.5" stroke="#6F2035" stroke-width="1.2"/><circle cx="4.5" cy="4.5" r="1.5" fill="#6F2035"/></svg>
+      Creative · Digital · Marketing
+    </div>
+    <p class="hero-tagline">
+      Creative professional based in New Jersey with 3+ years of experience across
+      <strong>graphic design, digital content, social media, marketing, branding, photography, and creative production.</strong>
+      Currently leading marketing and creative for FC Copa Academy and Performance Sports Center.
+      Previously in professional baseball and NCAA athletics.
+    </p>
+    <div class="hero-btns">
+      <a href="#work" class="btn-p">View My Work</a>
+      <a href="katie-rygiel-resume.pdf" target="_blank" class="btn-g">Resume</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="headshot-wrap">
+      <div class="headshot-frame">
+        <img src="images/headshot.jpg" alt="Katie Rygiel"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div class="headshot-ph" style="display:none">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"><circle cx="18" cy="13" r="6"/><path d="M6 30c0-6.627 5.373-12 12-12s12 5.373 12 12"/></svg>
+          <span>Headshot</span>
+        </div>
+      </div>
+      <div class="headshot-accent"></div>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone-outer">
+        <div class="phone-inner">
+          <div class="phone-status"><span class="phone-time">9:41</span></div>
+          <div class="phone-notch"></div>
+          <div class="phone-screen"><div class="ig-feed" id="ig-feed"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-divider">
+  <div class="marquee-track">
+    <div class="m-item"><span class="m-text hl">FC Copa Academy</span><span class="m-dot"></span><span class="m-text">Performance Sports Center</span><span class="m-dot"></span><span class="m-text hl">New York Boulders</span><span class="m-dot"></span><span class="m-text">Ramapo College Athletics</span><span class="m-dot"></span><span class="m-text hl">Her Game Plan</span><span class="m-dot"></span><span class="m-text">5.1M Views</span><span class="m-dot"></span><span class="m-text hl">540K Reached</span><span class="m-dot"></span></div>
+    <div class="m-item"><span class="m-text hl">FC Copa Academy</span><span class="m-dot"></span><span class="m-text">Performance Sports Center</span><span class="m-dot"></span><span class="m-text hl">New York Boulders</span><span class="m-dot"></span><span class="m-text">Ramapo College Athletics</span><span class="m-dot"></span><span class="m-text hl">Her Game Plan</span><span class="m-dot"></span><span class="m-text">5.1M Views</span><span class="m-dot"></span><span class="m-text hl">540K Reached</span><span class="m-dot"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="sec">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="eyebrow">About Me</div>
+      <h2 class="sec-title">Design that connects.</h2>
+      <p>I'm a creative professional based in New Jersey with experience across graphic design, digital content, social media, brand work, marketing, photography, and creative production. Right now I lead all marketing and creative for FC Copa Academy and Performance Sports Center, where I handle everything from design and content to email, website, and campaign support.</p>
+      <p>Before that I spent time in professional baseball with the New York Boulders and two and a half years in NCAA Division III athletics at Ramapo College, where I produced over 300 graphics across more than ten varsity programs.</p>
+      <p>I'm comfortable moving between creative execution and broader marketing needs. I can go from designing a campaign graphic to writing copy, building a content calendar, or putting together a presentation. I work well independently, I can collaborate with a team, and I know how to manage multiple projects without things falling apart.</p>
+      <p>Sports is a big part of my background and I enjoy that work. I'm also interested in roles outside sports where strong creative and digital skills are the priority.</p>
+
+      <div class="skills-section">
+        <div class="skills-grid">
+          <div class="skill-group">
+            <div class="skill-group-label">Creative & Design</div>
+            <div class="chips">
+              <span class="chip primary">Graphic Design</span>
+              <span class="chip primary">Brand Identity</span>
+              <span class="chip primary">Digital Design</span>
+              <span class="chip">Campaign Creative</span>
+              <span class="chip">Print Design</span>
+              <span class="chip">Presentation Design</span>
+              <span class="chip">UX / UI Design</span>
+              <span class="chip">Illustration</span>
+              <span class="chip">Photography</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Digital & Content</div>
+            <div class="chips">
+              <span class="chip primary">Social Media</span>
+              <span class="chip primary">Content Creation</span>
+              <span class="chip primary">Social Creative</span>
+              <span class="chip">Email Marketing & Design</span>
+              <span class="chip">Website Content</span>
+              <span class="chip">Short-Form Video</span>
+              <span class="chip">Digital Advertising</span>
+              <span class="chip">Creative Production</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Marketing & Communication</div>
+            <div class="chips">
+              <span class="chip">Content Strategy</span>
+              <span class="chip">Content Calendars</span>
+              <span class="chip">Campaign Support</span>
+              <span class="chip">Copywriting</span>
+              <span class="chip">Brand Voice</span>
+              <span class="chip">Email Marketing</span>
+              <span class="chip">Website Management</span>
+              <span class="chip">SEO</span>
+              <span class="chip">Analytics & Reporting</span>
+              <span class="chip">Community Engagement</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Design Tools</div>
+            <div class="chips">
+              <span class="chip primary">Adobe Photoshop</span>
+              <span class="chip primary">Adobe Illustrator</span>
+              <span class="chip primary">Adobe InDesign</span>
+              <span class="chip primary">Canva</span>
+              <span class="chip">Figma</span>
+              <span class="chip">Adobe Lightroom</span>
+              <span class="chip">Adobe Premiere Pro</span>
+            </div>
+          </div>
+        </div>
+        <div class="skill-group" style="margin-top:1.1rem">
+          <div class="skill-group-label">Platforms</div>
+          <div class="chips">
+            <span class="chip">Instagram</span>
+            <span class="chip">TikTok</span>
+            <span class="chip">YouTube</span>
+            <span class="chip">LinkedIn</span>
+            <span class="chip">Facebook</span>
+            <span class="chip">X / Twitter</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="ab-row">
+        <div class="ab-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div>
+          <div class="ab-label">Current Role</div>
+          <div class="ab-val">Marketing & Creative Lead</div>
+          <div class="ab-sub">FC Copa Academy & Performance Sports Center. Oct 2025 to present.</div>
+        </div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <div class="ab-label">Sports Experience</div>
+          <div class="ab-val">Professional, Collegiate, and Youth Sports</div>
+          <div class="ab-sub">New York Boulders (Frontier League), RCNJ Athletics, RCNJ Softball, FC Copa Academy.</div>
+        </div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div>
+          <div class="ab-label">Social Media Growth</div>
+          <div class="ab-val">5.1M Views, 540K Reached</div>
+          <div class="ab-sub">Organic growth built from scratch at FC Copa since October 2025.</div>
+        </div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="ab-label">Location</div>
+          <div class="ab-val">New Jersey</div>
+          <div class="ab-sub">Open to relocation.</div>
+        </div>
+      </div>
+      <div class="ab-row">
+        <div class="ab-icon">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div>
+          <div class="ab-label">Education</div>
+          <div class="ab-val">Ramapo College of New Jersey</div>
+          <div class="ab-sub">B.A. Communication Arts, Visual Communication Design. Minor: Sports Management.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="sec">
+  <div class="work-top reveal">
+    <div class="eyebrow">Work</div>
+    <h2 class="sec-title">Selected Projects</h2>
+    <p class="work-subtitle">Professional, academic, and independent work across creative, digital, and marketing projects.</p>
+  </div>
+
+  <div class="work-grid">
+
+    <!-- 1. FC Copa -->
+    <a class="pc pc-a" href="#" onclick="openModal('copa');return false">
+      <div class="pc-img ph-copa">
+        <img src="images/copa/copa-4.jpg" alt="FC Copa Academy"
+          style="width:100%;height:100%;object-fit:cover"
+          onerror="this.style.display='none'"/>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">FC Copa Academy</div>
+      </div>
+      <span class="pc-tag">Creative Services · Digital Content · Marketing</span>
+      <div class="pc-overlay">
+        <div class="pc-ov-client">FC Copa Academy & Performance Sports Center</div>
+        <div class="pc-ov-title">Full-Scope Marketing & Creative</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-client">FC Copa Academy & Performance Sports Center</div>
+        <div class="pc-title">Full-Scope Marketing & Creative</div>
+        <div class="pc-desc">Design, content, social, email, website, photography, and campaign work across two organizations. 5.1M views and 540K reach built organically from scratch.</div>
+        <div class="pc-foot"><span class="pc-year">Oct 2025 – Present</span><span class="pc-arrow">→</span></div>
+      </div>
+    </a>
+
+    <!-- 2. Presentations -->
+    <a class="pc pc-b" href="#" onclick="openModal('pres');return false">
+      <div class="pc-img ph-pres">
+        <div class="ph-inner">Presentation Design</div>
+      </div>
+      <span class="pc-tag">Presentation Design · Creative Services</span>
+      <div class="pc-overlay">
+        <div class="pc-ov-client">FC Copa Academy & Her Game Plan</div>
+        <div class="pc-ov-title">Decks & Strategic Proposals</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-client">FC Copa Academy & Her Game Plan</div>
+        <div class="pc-title">Decks & Strategic Proposals</div>
+        <div class="pc-desc">Three professional presentations: a stakeholder communication deck, a partnership proposal with KPIs and phased rollout, and a full brand identity presentation.</div>
+        <div class="pc-foot"><span class="pc-year">2024 – 2025</span><span class="pc-arrow">→</span></div>
+      </div>
+    </a>
+
+    <!-- 3. Her Game Plan -->
+    <a class="pc pc-c" href="#" onclick="openModal('hgp');return false">
+      <div class="pc-img ph-hgp">
+        <div class="ph-inner">Her Game Plan</div>
+      </div>
+      <span class="pc-tag">Brand Identity · UX / UI Design</span>
+      <div class="pc-overlay">
+        <div class="pc-ov-client">Her Game Plan</div>
+        <div class="pc-ov-title">Brand Identity & UX Design</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-client">Her Game Plan — Women Playmakers' Network</div>
+        <div class="pc-title">Brand Identity & UX Design</div>
+        <div class="pc-desc">Full brand system including logo, color palette, typography, and merchandise, extended into a high-fidelity Figma prototype.</div>
+        <div class="pc-foot"><span class="pc-year">2025</span><span class="pc-arrow">→</span></div>
+      </div>
+    </a>
+
+    <!-- 4. Boulders -->
+    <a class="pc pc-d" href="#" onclick="openModal('boulders');return false">
+      <div class="pc-img ph-boulders">
+        <img src="images/boulders/boulders-5.jpg" alt="New York Boulders"
+          style="width:100%;height:100%;object-fit:cover"
+          onerror="this.style.display='none'"/>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">New York Boulders</div>
+      </div>
+      <span class="pc-tag">Social Media · Photography · Content</span>
+      <div class="pc-overlay">
+        <div class="pc-ov-client">New York Boulders</div>
+        <div class="pc-ov-title">Game Day Content & Social</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-client">New York Boulders — Frontier League</div>
+        <div class="pc-title">Game Day Content & Social</div>
+        <div class="pc-desc">In-game photography, social graphics, and real-time content for a professional baseball team with crowds of 2,500 to 3,000 per night.</div>
+        <div class="pc-foot"><span class="pc-year">Jun – Sep 2025</span><span class="pc-arrow">→</span></div>
+      </div>
+    </a>
+
+    <!-- 5. RCNJ -->
+    <a class="pc pc-e" href="#" onclick="openModal('rcnj');return false">
+      <div class="pc-img ph-rcnj">
+        <img src="images/rcnj/rcnj-1.png" alt="RCNJ Athletics"
+          style="width:100%;height:100%;object-fit:cover"
+          onerror="this.style.display='none'"/>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">RCNJ Athletics</div>
+      </div>
+      <span class="pc-tag">Graphic Design · Digital Content</span>
+      <div class="pc-overlay">
+        <div class="pc-ov-client">Ramapo College Athletics</div>
+        <div class="pc-ov-title">Athletic Department Graphic Design</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-client">Ramapo College Athletics</div>
+        <div class="pc-title">Athletic Department Graphic Design</div>
+        <div class="pc-desc">300+ graphics across 10+ varsity sports over two years. Game-day content, player features, award announcements, and brand templates.</div>
+        <div class="pc-foot"><span class="pc-year">Feb 2023 – May 2025</span><span class="pc-arrow">→</span></div>
+      </div>
+    </a>
+
+    <!-- 6. Independent -->
+    <a class="pc pc-f" href="#" onclick="openModal('illus');return false">
+      <div class="pc-img ph-illus">
+        <img src="images/illustration/illus-2.jpg" alt="Independent Design"
+          style="width:100%;height:100%;object-fit:cover"
+          onerror="this.style.display='none'"/>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">Independent Design</div>
+      </div>
+      <span class="pc-tag">Illustration · Print Design · Brand Identity</span>
+      <div class="pc-overlay">
+        <div class="pc-ov-client">Independent Work</div>
+        <div class="pc-ov-title">Illustration & Print Design</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-client">Independent & Academic Work</div>
+        <div class="pc-title">Illustration & Print Design</div>
+        <div class="pc-desc">Original brand identity, editorial illustration, poster design, book cover design, and print layout work produced independently.</div>
+        <div class="pc-foot"><span class="pc-year">2023 – 2025</span><span class="pc-arrow">→</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FILMSTRIP -->
+<div id="filmstrip">
+  <div class="fs-label">Photography — Live Coverage</div>
+  <div style="overflow:hidden">
+    <div class="fs-track">
+      <div class="fs-frame"><img src="images/photography/strip-1.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-2.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-3.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-4.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-5.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-6.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-7.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-8.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-9.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-10.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-1.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-2.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-3.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-4.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-5.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-6.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-7.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-8.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-9.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+      <div class="fs-frame"><img src="images/photography/strip-10.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Let's Connect</div>
+      <h2 class="co-title">Ready to work together?</h2>
+      <p class="co-sub">Open to full-time opportunities across creative services, design, digital content, social media, and marketing. Based in New Jersey and open to remote and hybrid opportunities.</p>
+      <div class="co-links">
+        <a href="mailto:katierygiel@comcast.net" class="clink">katierygiel@comcast.net <span class="clink-arr">→</span></a>
+        <a href="https://www.linkedin.com/in/katherinerygiel" target="_blank" class="clink">LinkedIn <span class="clink-arr">↗</span></a>
+        <a href="https://www.instagram.com/katherinerygiel" target="_blank" class="clink">Instagram <span class="clink-arr">↗</span></a>
+      </div>
+    </div>
+    <form class="co-form reveal" onsubmit="handleForm(event)">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Your Email" required/>
+      <input type="text" placeholder="Role / Company (optional)"/>
+      <textarea placeholder="Tell me about the opportunity..."></textarea>
+      <button type="submit" class="btn-p" style="justify-content:center">Send Message →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Katie Rygiel</p>
+  <p><a href="https://github.com/katherinerygiel" target="_blank">GitHub</a> &nbsp;·&nbsp; <a href="#hero">Back to top</a></p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-inner"></div>
+  </div>
+</div>
+
+<script>
+/* CURSOR */
+const cur = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX + 'px';
+  cur.style.top = e.clientY + 'px';
+});
+document.querySelectorAll('.pc,.btn-p,.btn-g,.clink,.modal-close,.asset-btn,.asset-dot,.nav-cta,.fs-frame').forEach(el => {
+  el.addEventListener('mouseenter', () => cur.classList.add('expand'));
+  el.addEventListener('mouseleave', () => cur.classList.remove('expand'));
+});
+
+/* PHONE FEED */
+const ACCOUNTS = [
+  {handle:'fccopa', avatar:'#6F2035', posts:[
+    {img:'images/phone/copa-1.jpg', cap:'ECNL TRYOUTS'},
+    {img:'images/phone/copa-2.jpg', cap:'TRYOUT FLYER'},
+    {img:'images/phone/copa-3.png', cap:'COMMITTED'},
+    {img:'images/phone/copa-4.jpg', cap:'HOME OPENER'},
+    {img:'images/phone/copa-5.jpg', cap:'GOAL OF THE WEEK'},
+  ]},
+  {handle:'nyboulders', avatar:'#1a2a4a', posts:[
+    {img:'images/phone/boulders-1.jpg', cap:'8 HOME RUNS'},
+    {img:'images/phone/boulders-2.jpg', cap:'ALL-FRONTIER LEAGUE'},
+    {img:'images/phone/boulders-3.jpg', cap:'DIVISION DOMINANCE'},
+    {img:'images/phone/boulders-4.jpg', cap:'PLAYOFFS CLINCHED'},
+    {img:'images/phone/boulders-5.jpg', cap:'ALL STARS'},
+  ]},
+  {handle:'rcnjathletics', avatar:'#3a1010', posts:[
+    {img:'images/phone/rcnj-1.png', cap:'HEADED TO PARIS'},
+    {img:'images/phone/rcnj-2.png', cap:'ALL-AMERICAN'},
+    {img:'images/phone/rcnj-3.png', cap:'ALL-AMERICAN'},
+    {img:'images/phone/rcnj-4.png', cap:'GAME DAY'},
+    {img:'images/phone/rcnj-5.png', cap:'PACK THE BRAD'},
+  ]},
+  {handle:'rcnjsoftball', avatar:'#102a10', posts:[
+    {img:'images/phone/softball-1.jpg', cap:'23 DAYS'},
+    {img:'images/phone/softball-2.png', cap:'1 DAY'},
+    {img:'images/phone/softball-3.jpg', cap:'21 DAYS'},
+    {img:'images/phone/softball-4.png', cap:'13 DAYS'},
+    {img:'images/phone/softball-5.png', cap:'3 DAYS'},
+  ]},
+];
+const allPosts = [];
+for (let i = 0; i < 5; i++) ACCOUNTS.forEach(a => allPosts.push({...a.posts[i], handle:a.handle, avatar:a.avatar}));
+const feedEl = document.getElementById('ig-feed');
+if (feedEl) {
+  const doubled = [...allPosts, ...allPosts];
+  feedEl.innerHTML = doubled.map(p => `
+    <div class="ig-post">
+      <div class="ig-post-header">
+        <div class="ig-avatar" style="background:${p.avatar}"></div>
+        <span class="ig-handle">@${p.handle}</span>
+        <span class="ig-dot">↗</span>
+      </div>
+      <div style="width:100%;aspect-ratio:4/5;overflow:hidden;background:#111;position:relative">
+        <img src="${p.img}" alt="${p.cap}" style="width:100%;height:100%;object-fit:cover;display:block"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1f2a,#0d1117);font-family:'DM Mono',monospace;font-size:7px;color:rgba(255,255,255,.15);text-align:center;letter-spacing:.08em;padding:.5rem">${p.cap}</div>
+      </div>
+      <div class="ig-actions">♡ &nbsp;✦ &nbsp;↗</div>
+    </div>`).join('');
+  feedEl.style.animation = 'feed-scroll 65s linear infinite';
+}
+
+/* PROJECT DATA
+   assets: array of objects with type ('image'|'pdf'), src, and optional label
+   To add real assets later, add them to the slides array for each project.
+   PDF example: {type:'pdf', src:'pdfs/copa-age-change.pdf', label:'FC Copa Age Change Deck'}
+   Image example: {type:'image', src:'images/copa/copa-1.jpg', label:'ECNJ RL Tryouts'}
+*/
+const MODALS = {
+  copa: {
+    tag: 'Creative Services · Digital Content · Marketing',
+    title: 'FC Copa Academy & Performance Sports Center',
+    role: 'Marketing & Social Media Manager',
+    year: 'Oct 2025 – Present',
+    deliverables: 'Graphic design, social media management, photography, video, email newsletters, website content, SEO, content calendars, campaign creative, print materials, stakeholder communications.',
+    tools: ['Photoshop','Illustrator','Canva','Lightroom','Premiere Pro','Meta Business Suite'],
+    sections: [
+      {label:'The Work', text:'FC Copa Academy is one of New Jersey\'s largest competitive youth soccer organizations. Performance Sports Center is their affiliated indoor training facility. I was brought on as their first dedicated marketing hire, responsible for everything creative and digital across both organizations.'},
+      {label:'What That Looks Like', text:'I run six social platforms, design all graphics and promotional materials, shoot photography from trainings and matches, edit video and reels, write and send newsletters, manage the website, handle SEO, and build monthly content calendars. I also designed and wrote a <strong>14-slide parent communication deck</strong> distributed to the full FC Copa membership to explain a major national rule change.'},
+      {label:'The Results', text:'All organic, no paid advertising. Since October 2025: 5.1M Instagram views (up 1,922%), 540K accounts reached (up 106%), 3,800 new followers (up 1,200%). Performance Sports Center saw 841K views (up 1,800%), 10K interactions (up 2,500%), and 848 new followers (up 1,700%).'},
+    ],
+    stats: [
+      {n:'5.1M', l:'Instagram Views', sub:'+1,922%'},
+      {n:'540K', l:'Accounts Reached', sub:'+106%'},
+      {n:'3,800', l:'New Followers', sub:'+1,200%'},
+      {n:'6', l:'Platforms Managed', sub:'Simultaneously'},
+    ],
+    assets: [
+      {type:'image', src:'images/copa/copa-4.jpg', label:'Home Opener'},
+      {type:'image', src:'images/copa/copa-1.jpg', label:'ECNL RL Tryouts'},
+      {type:'image', src:'images/copa/copa-2.jpg', label:'Tryout Flyer'},
+      {type:'image', src:'images/copa/copa-3.png', label:'College Commitment'},
+      {type:'image', src:'images/psc/psc-1.jpg', label:'PSC x Veo Partnership'},
+      {type:'image', src:'images/psc/psc-2.jpg', label:'PSC Champions'},
+      {type:'image', src:'images/psc/psc-3.png', label:'PSC Standings'},
+    ]
+  },
+  pres: {
+    tag: 'Presentation Design · Creative Services',
+    title: 'Decks & Strategic Proposals',
+    role: 'Designer & Writer',
+    year: '2024 – 2025',
+    deliverables: 'Stakeholder presentation design, partnership proposal, brand identity presentation deck.',
+    tools: ['Google Slides','InDesign','Canva','Photoshop','Illustrator'],
+    sections: [
+      {label:'FC Copa Age Change Deck', text:'A 14-slide stakeholder communication piece designed and written to explain a major national US Soccer rule change to thousands of FC Copa families. The goal was to translate complex policy into clear, reassuring communication while keeping everything on-brand and professionally structured.'},
+      {label:'FC Apex x RYSC Partnership Proposal', text:'An 8-slide strategic partnership pitch built from scratch. Includes audience analysis, phased rollout plan, KPIs, sponsorship strategy, social media plan, email marketing, on-site activation, and a success metrics framework. The kind of document that gets meetings.'},
+      {label:'Her Game Plan Brand Presentation', text:'A client-facing brand identity deck covering brand positioning, a complete color system with Pantone and web values, typography guide, brand voice, and merchandise mockups across hat, notebook, shirt, and tote. Delivered as a professionally formatted InDesign document.'},
+    ],
+    stats: [
+      {n:'3', l:'Professional Decks', sub:''},
+      {n:'14', l:'Slides — Copa Deck', sub:'Distributed to full membership'},
+      {n:'8', l:'Slides — Partnership Pitch', sub:'KPIs + phased rollout'},
+      {n:'Full', l:'Brand Identity Deck', sub:'Pantone values included'},
+    ],
+    assets: [
+      {type:'pdf', src:'pdfs/copa-age-change.pdf', label:'FC Copa Age Change Deck'},
+      {type:'pdf', src:'pdfs/apex-rysc-partnership.pdf', label:'FC Apex x RYSC Partnership Proposal'},
+      {type:'pdf', src:'pdfs/hgp-brand-presentation.pdf', label:'Her Game Plan Brand Presentation'},
+    ]
+  },
+  hgp: {
+    tag: 'Brand Identity · UX / UI Design',
+    title: 'Her Game Plan',
+    role: 'Brand Designer & UX Designer',
+    year: '2025',
+    deliverables: 'Logo system, color palette, typography guide, brand voice, merchandise mockups, UX research, wireframes, hi-fi Figma prototype.',
+    tools: ['Illustrator','Figma','InDesign','Canva','Photoshop'],
+    sections: [
+      {label:'The Project', text:'Her Game Plan is a platform concept built to connect, mentor, and empower women in sports. The goal was to design a brand that felt bold and cohesive across an app, merchandise, digital platforms, and a client presentation.'},
+      {label:'Brand System', text:'Custom logo with a playbook motif built into the letterforms. A four-color palette named after sports: Blitz, Tennis, Bleacher, and Roster, each with full Pantone and web values. Typography system using Cooper Hewitt with a defined hierarchy. Brand voice guide. Merchandise applied across hat, notebook, shirt, and tote.'},
+      {label:'UX Process', text:'Full process from research to prototype: user interviews, affinity mapping, personas, competitor analysis, lo-fi wireframes, and a high-fidelity iPhone prototype in Figma. The app targets women across athletics, coaching, creative work, and sports business.'},
+    ],
+    stats: [
+      {n:'Full', l:'Brand System', sub:'Logo, color, type, voice'},
+      {n:'4', l:'Color Families', sub:'With Pantone values'},
+      {n:'Hi-Fi', l:'Figma Prototype', sub:'Complete UX process'},
+      {n:'Merch', l:'Line Designed', sub:'Hat, shirt, notebook, tote'},
+    ],
+    assets: [
+      {type:'pdf', src:'pdfs/hgp-brand-presentation.pdf', label:'Her Game Plan Brand Deck'},
+      {type:'image', src:'images/illustration/illus-2.jpg', label:'Logo System'},
+    ]
+  },
+  boulders: {
+    tag: 'Social Media · Photography · Game Day Content',
+    title: 'New York Boulders',
+    role: 'Promotions, Social Media & Photography Intern',
+    year: 'Jun – Sep 2025',
+    deliverables: 'Social media graphics, in-game photography, video and reels, in-stadium content, real-time publishing.',
+    tools: ['Photoshop','Lightroom','Canva','Canon Camera'],
+    sections: [
+      {label:'The Context', text:'The New York Boulders are a professional baseball team in the Frontier League, playing to crowds of 2,500 to 3,000 fans per game. The work required creating accurate, on-brand content fast enough to keep pace with a live game.'},
+      {label:'What I Did', text:'Shot in-game photography, designed social graphics, edited reels, and published content in real time across Instagram, TikTok, and X during and after games. Used post-game analytics to understand what drove engagement and adjusted accordingly each night.'},
+      {label:'The Standard', text:'Professional-level speed and quality. Content needed to be live before fans left the stadium. This role required creative judgment under real pressure with no margin for errors.'},
+    ],
+    stats: [
+      {n:'2,500+', l:'Fans Per Game', sub:'Frontier League'},
+      {n:'Pro', l:'Level Content', sub:'Live deadline every night'},
+      {n:'3', l:'Platforms', sub:'IG, TikTok, X'},
+      {n:'Season', l:'Long Coverage', sub:'Jun – Sep 2025'},
+    ],
+    assets: [
+      {type:'image', src:'images/boulders/boulders-5.jpg', label:'All Stars'},
+      {type:'image', src:'images/boulders/boulders-4.jpg', label:'Playoffs Clinched'},
+      {type:'image', src:'images/boulders/boulders-3.jpg', label:'Boulder Bulletin'},
+      {type:'image', src:'images/boulders/boulders-2.jpg', label:'All-Frontier League Team'},
+      {type:'image', src:'images/boulders/boulders-1.jpg', label:'8 Home Runs'},
+    ]
+  },
+  rcnj: {
+    tag: 'Graphic Design · Digital Content',
+    title: 'Ramapo College Athletics',
+    role: 'Graphic Designer',
+    year: 'Feb 2023 – May 2025',
+    deliverables: 'Social media graphics, game-day content, player features, award announcements, Olympic features, schedule graphics, recurring brand templates.',
+    tools: ['Photoshop','Illustrator','Canva','InDesign'],
+    sections: [
+      {label:'The Scope', text:'Ramapo College Athletics needed a consistent, high-volume visual identity across more than ten Division III varsity sports programs. Every sport, every season, every week.'},
+      {label:'What I Built', text:'Designed over 300 graphics for social media and web, including game-day content, player features, All-American announcements, a Paris 2024 Olympic feature, NCAA championship coverage, and recruiting assets. Built recurring templates for honors, stats, and schedules so the visual system could scale.'},
+      {label:'The Result', text:'Two years of consistent, on-brand output across the entire athletics department. Collaborated directly with the Sports Information Director to make sure the work reflected well on the college and its athletes.'},
+    ],
+    stats: [
+      {n:'300+', l:'Graphics Designed', sub:'Over two years'},
+      {n:'10+', l:'Sports Programs', sub:'Every varsity sport'},
+      {n:'2yr', l:'Consistent Tenure', sub:'Feb 2023 – May 2025'},
+      {n:'D-III', l:'NCAA Level', sub:'Ramapo College'},
+    ],
+    assets: [
+      {type:'image', src:'images/rcnj/rcnj-1.png', label:'Paris 2024 Olympics Feature'},
+      {type:'image', src:'images/rcnj/rcnj-2.png', label:'All-American Track & Field'},
+      {type:'image', src:'images/rcnj/rcnj-3.png', label:'All-American'},
+      {type:'image', src:'images/rcnj/rcnj-4.png', label:'Basketball Game Day'},
+      {type:'image', src:'images/rcnj/rcnj-5.png', label:'Pack the Brad'},
+      {type:'image', src:'images/softball/softball-3.jpg', label:'21 Days Countdown'},
+      {type:'image', src:'images/softball/softball-4.png', label:'13 Days Countdown'},
+      {type:'image', src:'images/softball/softball-1.jpg', label:'23 Days Countdown'},
+      {type:'image', src:'images/softball/softball-2.png', label:'1 Day Countdown'},
+      {type:'image', src:'images/softball/softball-5.png', label:'3 Days Countdown'},
+    ]
+  },
+  illus: {
+    tag: 'Illustration · Print Design · Brand Identity',
+    title: 'Independent & Academic Design Work',
+    role: 'Designer & Illustrator',
+    year: '2023 – 2025',
+    deliverables: 'Original illustration, brand identity, jersey and hat mockups, editorial poster series, book cover design, print layout, magazine spread, trifold brochure.',
+    tools: ['Illustrator','Photoshop','InDesign','Canva'],
+    sections: [
+      {label:'Center Point Angels — Sports Brand Identity', text:'A complete sports brand identity designed independently. Custom illustrated logo built from scratch: a cowboy boot and halo referencing Tyler Hubbard and Thomas Rhett\'s musical partnership. Full logo system with alternate variations, applied to a professional jersey mockup and snapback hat.'},
+      {label:'Editorial & Poster Work', text:'Three poster variations for a fictional Michel Gondry Film Festival, each built around a different object from his visual language: a VHS tape, a pocket watch, and a spotlight rig. Each has a distinct color palette and type treatment while sharing a coherent series identity.'},
+      {label:'Print & Layout', text:'Full book cover redesign for 20,000 Leagues Under the Sea with original illustration and hand-lettered type. Game On editorial magazine spread with multi-column layout and photography integration. CareVirginia trifold brochure designed to production-ready specifications.'},
+    ],
+    stats: [
+      {n:'Custom', l:'Illustration', sub:'Every element original'},
+      {n:'Full', l:'Brand System', sub:'Logo, jersey, hat'},
+      {n:'3', l:'Poster Variations', sub:'Film Festival Series'},
+      {n:'Print', l:'& Digital Range', sub:'Book, brochure, magazine'},
+    ],
+    assets: [
+      {type:'image', src:'images/illustration/illus-2.jpg', label:'Center Point Angels Logo'},
+      {type:'image', src:'images/illustration/illus-3.png', label:'Jersey Mockup'},
+      {type:'image', src:'images/illustration/illus-1.png', label:'Hat Mockup'},
+      {type:'image', src:'images/illustration/illus-4.png', label:'Film Festival Poster Series'},
+      {type:'image', src:'images/illustration/illus-5.png', label:'20,000 Leagues Book Cover'},
+      {type:'image', src:'images/layout/layout-1.png', label:'Game On Magazine Spread'},
+      {type:'image', src:'images/layout/layout-2.png', label:'CareVirginia Trifold'},
+    ]
+  }
+};
+
+/* MODAL STATE */
+let currentAssets = [];
+let currentAssetIdx = 0;
+
+function openModal(id) {
+  const d = MODALS[id];
+  if (!d) return;
+  currentAssets = d.assets || [];
+  currentAssetIdx = 0;
+
+  const sections = (d.sections || []).map(s =>
+    `<div class="cs-section">
+      <div class="cs-label">${s.label}</div>
+      <p class="cs-text">${s.text}</p>
+    </div>`
+  ).join('');
+
+  const stats = d.stats ? `
+    <div class="modal-stats">
+      ${d.stats.map(s => `
+        <div class="stat-box">
+          <div class="stat-num">${s.n}</div>
+          <div class="stat-label">${s.l}${s.sub ? '<br><span style="font-size:.48rem;opacity:.7">'+s.sub+'</span>' : ''}</div>
+        </div>`).join('')}
+    </div>` : '';
+
+  const tools = d.tools ? `
+    <div class="modal-tools">
+      ${d.tools.map(t => `<span class="tool-chip">${t}</span>`).join('')}
+    </div>` : '';
+
+  const assetsHtml = currentAssets.length ? `
+    <div class="assets-section">
+      <div class="assets-label">Project Assets</div>
+      <div class="asset-carousel">
+        <div class="asset-track-wrap">
+          <div class="asset-track" id="asset-track">
+            ${currentAssets.map((a, i) => buildAssetSlide(a, i)).join('')}
+          </div>
+        </div>
+        ${currentAssets.length > 1 ? `
+          <div class="asset-nav">
+            <div class="asset-nav-btns">
+              <button class="asset-btn" id="asset-prev" onclick="moveAsset(-1)" ${currentAssetIdx === 0 ? 'disabled' : ''}>&#8592;</button>
+              <button class="asset-btn" id="asset-next" onclick="moveAsset(1)">&#8594;</button>
+            </div>
+            <span class="asset-counter" id="asset-counter">1 / ${currentAssets.length}</span>
+            <div class="asset-dots" id="asset-dots">
+              ${currentAssets.map((_, i) => `<button class="asset-dot ${i===0?'active':''}" onclick="goAsset(${i})"></button>`).join('')}
+            </div>
+          </div>` : ''}
+      </div>
+    </div>` : '';
+
+  document.getElementById('modal-inner').innerHTML = `
+    <div class="modal-header">
+      <div class="modal-tag">${d.tag}</div>
+      <div class="modal-title">${d.title}</div>
+      <div class="modal-role">${d.role} &nbsp;·&nbsp; ${d.year}</div>
+    </div>
+    <div class="modal-meta">
+      <div class="meta-item">
+        <div class="meta-label">Deliverables</div>
+        <div class="meta-val">${d.deliverables}</div>
+      </div>
+    </div>
+    <div class="modal-body">
+      ${sections}
+      ${stats}
+      ${tools}
+      ${assetsHtml}
+    </div>`;
+
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  updateAssetNav();
+}
+
+function buildAssetSlide(asset, idx) {
+  if (asset.type === 'pdf') {
+    return `<div class="asset-slide" style="padding:0;flex-direction:column">
+      <iframe src="${asset.src}" title="${asset.label || 'Document'}" style="width:100%;height:72vh;border:none;border-radius:4px 4px 0 0;display:block"></iframe>
+      <div style="padding:.6rem 1rem;background:var(--bg);border-top:1px solid var(--border);border-radius:0 0 4px 4px;display:flex;align-items:center;justify-content:space-between">
+        <span style="font-family:'DM Mono',monospace;font-size:.6rem;color:var(--gray);letter-spacing:.08em">${asset.label || 'Document'}</span>
+        <a href="${asset.src}" target="_blank" style="font-family:'DM Mono',monospace;font-size:.6rem;color:var(--maroon);text-decoration:none;letter-spacing:.08em">Open in new tab ↗</a>
+      </div>
+    </div>`;
+  } else {
+    return `<div class="asset-slide">
+      <img src="${asset.src}" alt="${asset.label || ''}"
+        onerror="this.style.opacity='.2';this.alt='Image not found'"/>
+    </div>`;
+  }
+}
+
+function goAsset(idx) {
+  currentAssetIdx = Math.max(0, Math.min(idx, currentAssets.length - 1));
+  const track = document.getElementById('asset-track');
+  if (track) track.style.transform = `translateX(-${currentAssetIdx * 100}%)`;
+  updateAssetNav();
+}
+
+function moveAsset(dir) { goAsset(currentAssetIdx + dir); }
+
+function updateAssetNav() {
+  const counter = document.getElementById('asset-counter');
+  if (counter) counter.textContent = `${currentAssetIdx + 1} / ${currentAssets.length}`;
+  const prev = document.getElementById('asset-prev');
+  const next = document.getElementById('asset-next');
+  if (prev) prev.disabled = currentAssetIdx === 0;
+  if (next) next.disabled = currentAssetIdx === currentAssets.length - 1;
+  document.querySelectorAll('.asset-dot').forEach((d, i) =>
+    d.classList.toggle('active', i === currentAssetIdx));
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('modal-overlay').classList.contains('open')) return;
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft') moveAsset(-1);
+  if (e.key === 'ArrowRight') moveAsset(1);
+});
+
+/* STAGGER */
+function staggerCards() {
+  const cards = [...document.querySelectorAll('.pc:not(.hidden)')];
+  cards.forEach(c => c.classList.remove('in'));
+  cards.forEach((c, i) => setTimeout(() => c.classList.add('in'), i * 70));
+}
+window.addEventListener('load', () => setTimeout(staggerCards, 150));
+
+/* SCROLL REVEAL */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, {threshold: .08});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* FORM */
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'Sent.';
+  btn.style.background = '#14532d';
+  setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; e.target.reset(); }, 3000);
+}
+</script>
+</body>
+</html>
