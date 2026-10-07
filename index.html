@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Katie Rygiel — Creative Portfolio</title>
+<title>Katie Rygiel Creative & Digital Portfolio</title>
+<meta name="description" content="Katie Rygiel is a creative professional based in New Jersey with experience across graphic design, digital content, social media, brand identity, and marketing."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
@@ -119,7 +120,7 @@ h2.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-siz
 .chip.primary{border-color:rgba(111,32,53,.3);color:var(--maroon)}
 
 /* ABOUT RIGHT */
-.ab-row{display:flex;gap:1.2rem;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--border);transition:padding-left .2s}
+.ab-row{display:flex;gap:0;align-items:flex-start;padding:1.2rem 0;border-bottom:1px solid var(--border);transition:padding-left .2s}
 .ab-row:first-child{padding-top:0}
 .ab-row:last-child{border-bottom:none}
 .ab-row:hover{padding-left:.4rem}
@@ -140,7 +141,7 @@ h2.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-siz
 .pc-a{grid-column:1/8}.pc-b{grid-column:8/13}.pc-c{grid-column:1/5}.pc-d{grid-column:5/9}.pc-e{grid-column:9/13}.pc-f{grid-column:1/7}
 .pc.hidden{display:none}
 
-/* CARD THUMBNAIL — controlled crop for grid only */
+/* CARD THUMBNAIL controlled crop for grid only */
 .pc-img{width:100%;overflow:hidden;position:relative;background:var(--bg2)}
 .pc-a .pc-img,.pc-b .pc-img{aspect-ratio:16/9}
 .pc-c .pc-img,.pc-d .pc-img,.pc-e .pc-img{aspect-ratio:4/3}
@@ -306,6 +307,23 @@ footer a:hover{color:#fff}
   .modal-overlay{padding:1rem}
   .modal-header,.modal-body,.modal-meta{padding-left:1.2rem;padding-right:1.2rem}
 }
+@media(max-width:600px){
+  body{font-size:15px}
+  .hero-kicker{font-size:.58rem;letter-spacing:.14em}
+  .hero-tagline{font-size:.92rem;max-width:100%}
+  .hero-title-badge{font-size:.56rem}
+  .hero-btns{flex-direction:column;gap:.6rem}
+  .btn-p,.btn-g{width:100%;justify-content:center}
+  .headshot-frame{width:160px}
+  .phone-outer{width:140px}
+  .hero-right{gap:1rem}
+  .fs-label{padding:0 1.5rem 1rem}
+  h2.sec-title{font-size:1.8rem}
+  .modal-stats{grid-template-columns:repeat(2,1fr)}
+  .modal-title{font-size:1.3rem}
+  .pc-title{font-size:.92rem}
+  .marquee-divider{display:none}
+}
 </style>
 </head>
 <body>
@@ -324,21 +342,15 @@ footer a:hover{color:#fff}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-kicker">Creative Services · Digital Content · Brand & Design</div>
+    <div class="hero-kicker">Graphic Design · Digital Content · Brand & Marketing</div>
     <div>
       <span class="hero-name-first">Katie</span>
       <span class="hero-name-last">Rygiel.</span>
       <div class="hero-underline"></div>
     </div>
-    <div class="hero-title-badge">
-      <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><circle cx="4.5" cy="4.5" r="3.5" stroke="#6F2035" stroke-width="1.2"/><circle cx="4.5" cy="4.5" r="1.5" fill="#6F2035"/></svg>
-      Creative · Digital · Marketing
-    </div>
+    <div class="hero-title-badge">Creative · Digital · Marketing</div>
     <p class="hero-tagline">
-      Creative professional based in New Jersey with 3+ years of experience across
-      <strong>graphic design, digital content, social media, marketing, branding, photography, and creative production.</strong>
-      Currently leading marketing and creative for FC Copa Academy and Performance Sports Center.
-      Previously in professional baseball and NCAA athletics.
+      I create visual identities, campaigns and digital content that help brands communicate clearly and connect with their audiences.
     </p>
     <div class="hero-btns">
       <a href="#work" class="btn-p">View My Work</a>
@@ -382,71 +394,53 @@ footer a:hover{color:#fff}
 <section id="about" class="sec">
   <div class="about-grid">
     <div class="reveal">
-      <div class="eyebrow">About Me</div>
+      <div class="eyebrow">About</div>
       <h2 class="sec-title">Design that connects.</h2>
-      <p>I'm a creative professional based in New Jersey with experience across graphic design, digital content, social media, brand work, marketing, photography, and creative production. Right now I lead all marketing and creative for FC Copa Academy and Performance Sports Center, where I handle everything from design and content to email, website, and campaign support.</p>
-      <p>Before that I spent time in professional baseball with the New York Boulders and two and a half years in NCAA Division III athletics at Ramapo College, where I produced over 300 graphics across more than ten varsity programs.</p>
-      <p>I'm comfortable moving between creative execution and broader marketing needs. I can go from designing a campaign graphic to writing copy, building a content calendar, or putting together a presentation. I work well independently, I can collaborate with a team, and I know how to manage multiple projects without things falling apart.</p>
-      <p>Sports is a big part of my background and I enjoy that work. I'm also interested in roles outside sports where strong creative and digital skills are the priority.</p>
+      <p>I'm Katie, a creative professional with experience across graphic design, digital content, social media and marketing.</p>
+      <p>I currently lead creative and digital work for FC Copa Academy and Performance Sports Center, where my role ranges from campaign design and social content to photography, email marketing and web updates. My background also includes professional baseball and NCAA athletics, where I developed a strong understanding of fast-paced creative environments and audience-focused content.</p>
+      <p>I enjoy work that combines strong design with a clear purpose. Whether I'm developing a campaign, building a brand system or creating content for digital platforms, I like figuring out how the pieces work together and how creative decisions support the larger goal.</p>
 
       <div class="skills-section">
-        <div class="skills-grid">
-          <div class="skill-group">
-            <div class="skill-group-label">Creative & Design</div>
-            <div class="chips">
-              <span class="chip primary">Graphic Design</span>
-              <span class="chip primary">Brand Identity</span>
-              <span class="chip primary">Digital Design</span>
-              <span class="chip">Campaign Creative</span>
-              <span class="chip">Print Design</span>
-              <span class="chip">Presentation Design</span>
-              <span class="chip">UX / UI Design</span>
-              <span class="chip">Illustration</span>
-              <span class="chip">Photography</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-label">Digital & Content</div>
-            <div class="chips">
-              <span class="chip primary">Social Media</span>
-              <span class="chip primary">Content Creation</span>
-              <span class="chip primary">Social Creative</span>
-              <span class="chip">Email Marketing & Design</span>
-              <span class="chip">Website Content</span>
-              <span class="chip">Short-Form Video</span>
-              <span class="chip">Digital Advertising</span>
-              <span class="chip">Creative Production</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-label">Marketing & Communication</div>
-            <div class="chips">
-              <span class="chip">Content Strategy</span>
-              <span class="chip">Content Calendars</span>
-              <span class="chip">Campaign Support</span>
-              <span class="chip">Copywriting</span>
-              <span class="chip">Brand Voice</span>
-              <span class="chip">Email Marketing</span>
-              <span class="chip">Website Management</span>
-              <span class="chip">SEO</span>
-              <span class="chip">Analytics & Reporting</span>
-              <span class="chip">Community Engagement</span>
-            </div>
-          </div>
-          <div class="skill-group">
-            <div class="skill-group-label">Design Tools</div>
-            <div class="chips">
-              <span class="chip primary">Adobe Photoshop</span>
-              <span class="chip primary">Adobe Illustrator</span>
-              <span class="chip primary">Adobe InDesign</span>
-              <span class="chip primary">Canva</span>
-              <span class="chip">Figma</span>
-              <span class="chip">Adobe Lightroom</span>
-              <span class="chip">Adobe Premiere Pro</span>
-            </div>
+        <div class="skill-group" style="margin-bottom:1.1rem">
+          <div class="skill-group-label">What I Do</div>
+          <div class="chips">
+            <span class="chip primary">Graphic Design</span>
+            <span class="chip primary">Brand Identity</span>
+            <span class="chip primary">Social &amp; Digital Content</span>
+            <span class="chip primary">Campaign Creative</span>
+            <span class="chip primary">Digital Marketing</span>
+            <span class="chip primary">Photography</span>
+            <span class="chip primary">Content Strategy</span>
           </div>
         </div>
-        <div class="skill-group" style="margin-top:1.1rem">
+        <div class="skill-group" style="margin-bottom:1.1rem">
+          <div class="skill-group-label">Capabilities</div>
+          <div class="chips">
+            <span class="chip">Email Marketing</span>
+            <span class="chip">Website Content</span>
+            <span class="chip">Presentation Design</span>
+            <span class="chip">UX / UI Design</span>
+            <span class="chip">Copywriting</span>
+            <span class="chip">Short-Form Video</span>
+            <span class="chip">Print Design</span>
+            <span class="chip">Illustration</span>
+            <span class="chip">Analytics &amp; Reporting</span>
+            <span class="chip">SEO</span>
+          </div>
+        </div>
+        <div class="skill-group" style="margin-bottom:1.1rem">
+          <div class="skill-group-label">Tools</div>
+          <div class="chips">
+            <span class="chip">Adobe Photoshop</span>
+            <span class="chip">Illustrator</span>
+            <span class="chip">InDesign</span>
+            <span class="chip">Canva</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Lightroom</span>
+            <span class="chip">Premiere Pro</span>
+          </div>
+        </div>
+        <div class="skill-group" style="margin-top:0">
           <div class="skill-group-label">Platforms</div>
           <div class="chips">
             <span class="chip">Instagram</span>
@@ -462,9 +456,6 @@ footer a:hover{color:#fff}
 
     <div class="reveal">
       <div class="ab-row">
-        <div class="ab-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
         <div>
           <div class="ab-label">Current Role</div>
           <div class="ab-val">Marketing & Creative Lead</div>
@@ -472,9 +463,6 @@ footer a:hover{color:#fff}
         </div>
       </div>
       <div class="ab-row">
-        <div class="ab-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
         <div>
           <div class="ab-label">Sports Experience</div>
           <div class="ab-val">Professional, Collegiate, and Youth Sports</div>
@@ -482,19 +470,13 @@ footer a:hover{color:#fff}
         </div>
       </div>
       <div class="ab-row">
-        <div class="ab-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
         <div>
-          <div class="ab-label">Social Media Growth</div>
-          <div class="ab-val">5.1M Views, 540K Reached</div>
-          <div class="ab-sub">Organic growth built from scratch at FC Copa since October 2025.</div>
+          <div class="ab-label">Results</div>
+          <div class="ab-val">5.1M Views · 540K Reached</div>
+          <div class="ab-sub">Organic social growth at FC Copa since October 2025. No paid advertising.</div>
         </div>
       </div>
       <div class="ab-row">
-        <div class="ab-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
         <div>
           <div class="ab-label">Location</div>
           <div class="ab-val">New Jersey</div>
@@ -502,9 +484,6 @@ footer a:hover{color:#fff}
         </div>
       </div>
       <div class="ab-row">
-        <div class="ab-icon">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6F2035" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
         <div>
           <div class="ab-label">Education</div>
           <div class="ab-val">Ramapo College of New Jersey</div>
@@ -519,8 +498,8 @@ footer a:hover{color:#fff}
 <section id="work" class="sec">
   <div class="work-top reveal">
     <div class="eyebrow">Work</div>
-    <h2 class="sec-title">Selected Projects</h2>
-    <p class="work-subtitle">Professional, academic, and independent work across creative, digital, and marketing projects.</p>
+    <h2 class="sec-title">Selected Work</h2>
+    <p class="work-subtitle">Professional, academic and independent projects across design, content, brand and marketing.</p>
   </div>
 
   <div class="work-grid">
@@ -533,7 +512,7 @@ footer a:hover{color:#fff}
           onerror="this.style.display='none'"/>
         <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">FC Copa Academy</div>
       </div>
-      <span class="pc-tag">Creative Services · Digital Content · Marketing</span>
+      <span class="pc-tag">Creative Direction · Digital Content · Marketing</span>
       <div class="pc-overlay">
         <div class="pc-ov-client">FC Copa Academy & Performance Sports Center</div>
         <div class="pc-ov-title">Full-Scope Marketing & Creative</div>
@@ -541,7 +520,7 @@ footer a:hover{color:#fff}
       <div class="pc-body">
         <div class="pc-client">FC Copa Academy & Performance Sports Center</div>
         <div class="pc-title">Full-Scope Marketing & Creative</div>
-        <div class="pc-desc">Design, content, social, email, website, photography, and campaign work across two organizations. 5.1M views and 540K reach built organically from scratch.</div>
+        <div class="pc-desc">Creative direction, social content, photography, email, web and campaign work across two organizations.</div>
         <div class="pc-foot"><span class="pc-year">Oct 2025 – Present</span><span class="pc-arrow">→</span></div>
       </div>
     </a>
@@ -549,7 +528,10 @@ footer a:hover{color:#fff}
     <!-- 2. Presentations -->
     <a class="pc pc-b" href="#" onclick="openModal('pres');return false">
       <div class="pc-img ph-pres">
-        <div class="ph-inner">Presentation Design</div>
+        <img src="images/psc/psc-3.png" alt="Presentation Design"
+          style="width:100%;height:100%;object-fit:cover"
+          onerror="this.style.display='none'"/>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.4">Presentation Design</div>
       </div>
       <span class="pc-tag">Presentation Design · Creative Services</span>
       <div class="pc-overlay">
@@ -559,7 +541,7 @@ footer a:hover{color:#fff}
       <div class="pc-body">
         <div class="pc-client">FC Copa Academy & Her Game Plan</div>
         <div class="pc-title">Decks & Strategic Proposals</div>
-        <div class="pc-desc">Three professional presentations: a stakeholder communication deck, a partnership proposal with KPIs and phased rollout, and a full brand identity presentation.</div>
+        <div class="pc-desc">Stakeholder communication, partnership proposal and brand identity presentation design.</div>
         <div class="pc-foot"><span class="pc-year">2024 – 2025</span><span class="pc-arrow">→</span></div>
       </div>
     </a>
@@ -567,7 +549,10 @@ footer a:hover{color:#fff}
     <!-- 3. Her Game Plan -->
     <a class="pc pc-c" href="#" onclick="openModal('hgp');return false">
       <div class="pc-img ph-hgp">
-        <div class="ph-inner">Her Game Plan</div>
+        <img src="images/hergame/hgp-cover.jpg" alt="Her Game Plan"
+          style="width:100%;height:100%;object-fit:cover"
+          onerror="this.style.display='none'"/>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.4">Her Game Plan</div>
       </div>
       <span class="pc-tag">Brand Identity · UX / UI Design</span>
       <div class="pc-overlay">
@@ -575,9 +560,9 @@ footer a:hover{color:#fff}
         <div class="pc-ov-title">Brand Identity & UX Design</div>
       </div>
       <div class="pc-body">
-        <div class="pc-client">Her Game Plan — Women Playmakers' Network</div>
+        <div class="pc-client">Her Game Plan Women Playmakers' Network</div>
         <div class="pc-title">Brand Identity & UX Design</div>
-        <div class="pc-desc">Full brand system including logo, color palette, typography, and merchandise, extended into a high-fidelity Figma prototype.</div>
+        <div class="pc-desc">Brand system, logo, color, typography, merchandise and Figma prototype.</div>
         <div class="pc-foot"><span class="pc-year">2025</span><span class="pc-arrow">→</span></div>
       </div>
     </a>
@@ -590,15 +575,15 @@ footer a:hover{color:#fff}
           onerror="this.style.display='none'"/>
         <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">New York Boulders</div>
       </div>
-      <span class="pc-tag">Social Media · Photography · Content</span>
+      <span class="pc-tag">Social Design · Photography · Content</span>
       <div class="pc-overlay">
         <div class="pc-ov-client">New York Boulders</div>
         <div class="pc-ov-title">Game Day Content & Social</div>
       </div>
       <div class="pc-body">
-        <div class="pc-client">New York Boulders — Frontier League</div>
+        <div class="pc-client">New York Boulders Frontier League</div>
         <div class="pc-title">Game Day Content & Social</div>
-        <div class="pc-desc">In-game photography, social graphics, and real-time content for a professional baseball team with crowds of 2,500 to 3,000 per night.</div>
+        <div class="pc-desc">Social design, photography and live content for a professional baseball team.</div>
         <div class="pc-foot"><span class="pc-year">Jun – Sep 2025</span><span class="pc-arrow">→</span></div>
       </div>
     </a>
@@ -611,7 +596,7 @@ footer a:hover{color:#fff}
           onerror="this.style.display='none'"/>
         <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">RCNJ Athletics</div>
       </div>
-      <span class="pc-tag">Graphic Design · Digital Content</span>
+      <span class="pc-tag">Creative Design · Social Content · NCAA Athletics</span>
       <div class="pc-overlay">
         <div class="pc-ov-client">Ramapo College Athletics</div>
         <div class="pc-ov-title">Athletic Department Graphic Design</div>
@@ -619,7 +604,7 @@ footer a:hover{color:#fff}
       <div class="pc-body">
         <div class="pc-client">Ramapo College Athletics</div>
         <div class="pc-title">Athletic Department Graphic Design</div>
-        <div class="pc-desc">300+ graphics across 10+ varsity sports over two years. Game-day content, player features, award announcements, and brand templates.</div>
+        <div class="pc-desc">300+ graphics across 10+ varsity sports programs over two seasons.</div>
         <div class="pc-foot"><span class="pc-year">Feb 2023 – May 2025</span><span class="pc-arrow">→</span></div>
       </div>
     </a>
@@ -627,12 +612,12 @@ footer a:hover{color:#fff}
     <!-- 6. Independent -->
     <a class="pc pc-f" href="#" onclick="openModal('illus');return false">
       <div class="pc-img ph-illus">
-        <img src="images/illustration/illus-2.jpg" alt="Independent Design"
+        <img src="images/layout/layout-1.png" alt="Independent Design"
           style="width:100%;height:100%;object-fit:cover"
           onerror="this.style.display='none'"/>
-        <div class="ph-inner" style="position:absolute;inset:0;opacity:.6">Independent Design</div>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.4">Independent Design</div>
       </div>
-      <span class="pc-tag">Illustration · Print Design · Brand Identity</span>
+      <span class="pc-tag">Brand Identity · Illustration · Print Design</span>
       <div class="pc-overlay">
         <div class="pc-ov-client">Independent Work</div>
         <div class="pc-ov-title">Illustration & Print Design</div>
@@ -640,7 +625,7 @@ footer a:hover{color:#fff}
       <div class="pc-body">
         <div class="pc-client">Independent & Academic Work</div>
         <div class="pc-title">Illustration & Print Design</div>
-        <div class="pc-desc">Original brand identity, editorial illustration, poster design, book cover design, and print layout work produced independently.</div>
+        <div class="pc-desc">Original brand identity, illustration, poster design, book cover and editorial layout.</div>
         <div class="pc-foot"><span class="pc-year">2023 – 2025</span><span class="pc-arrow">→</span></div>
       </div>
     </a>
@@ -650,7 +635,7 @@ footer a:hover{color:#fff}
 
 <!-- FILMSTRIP -->
 <div id="filmstrip">
-  <div class="fs-label">Photography — Live Coverage</div>
+  <div class="fs-label">Photography Live Coverage</div>
   <div style="overflow:hidden">
     <div class="fs-track">
       <div class="fs-frame"><img src="images/photography/strip-1.jpg" alt="" onerror="this.parentNode.style.display='none'"/></div>
@@ -683,14 +668,14 @@ footer a:hover{color:#fff}
     <div class="reveal">
       <div class="eyebrow">Let's Connect</div>
       <h2 class="co-title">Ready to work together?</h2>
-      <p class="co-sub">Open to full-time opportunities across creative services, design, digital content, social media, and marketing. Based in New Jersey and open to remote and hybrid opportunities.</p>
+      <p class="co-sub">Open to full-time creative, design, content and digital marketing opportunities. Based in New Jersey and open to remote and hybrid work.</p>
       <div class="co-links">
         <a href="mailto:katierygiel@comcast.net" class="clink">katierygiel@comcast.net <span class="clink-arr">→</span></a>
         <a href="https://www.linkedin.com/in/katherinerygiel" target="_blank" class="clink">LinkedIn <span class="clink-arr">↗</span></a>
-        <a href="https://www.instagram.com/katherinerygiel" target="_blank" class="clink">Instagram <span class="clink-arr">↗</span></a>
+        <a href="https://www.instagram.com/katierygielgraphics" target="_blank" class="clink">Instagram <span class="clink-arr">↗</span></a>
       </div>
     </div>
-    <form class="co-form reveal" onsubmit="handleForm(event)">
+    <form class="co-form reveal" action="https://formspree.io/f/xdeaeabw" method="POST">
       <input type="text" placeholder="Your Name" required/>
       <input type="email" placeholder="Your Email" required/>
       <input type="text" placeholder="Role / Company (optional)"/>
@@ -768,10 +753,10 @@ if (feedEl) {
         <span class="ig-handle">@${p.handle}</span>
         <span class="ig-dot">↗</span>
       </div>
-      <div style="width:100%;aspect-ratio:4/5;overflow:hidden;background:#111;position:relative">
-        <img src="${p.img}" alt="${p.cap}" style="width:100%;height:100%;object-fit:cover;display:block"
+      <div style="width:100%;background:#111;line-height:0">
+        <img src="${p.img}" alt="${p.cap}" style="width:100%;height:auto;display:block;object-fit:contain"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-        <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1f2a,#0d1117);font-family:'DM Mono',monospace;font-size:7px;color:rgba(255,255,255,.15);text-align:center;letter-spacing:.08em;padding:.5rem">${p.cap}</div>
+        <div style="display:none;width:100%;aspect-ratio:1;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1f2a,#0d1117);font-family:'DM Mono',monospace;font-size:7px;color:rgba(255,255,255,.15);text-align:center;letter-spacing:.08em;padding:.5rem">${p.cap}</div>
       </div>
       <div class="ig-actions">♡ &nbsp;✦ &nbsp;↗</div>
     </div>`).join('');
@@ -793,9 +778,9 @@ const MODALS = {
     deliverables: 'Graphic design, social media management, photography, video, email newsletters, website content, SEO, content calendars, campaign creative, print materials, stakeholder communications.',
     tools: ['Photoshop','Illustrator','Canva','Lightroom','Premiere Pro','Meta Business Suite'],
     sections: [
-      {label:'The Work', text:'FC Copa Academy is one of New Jersey\'s largest competitive youth soccer organizations. Performance Sports Center is their affiliated indoor training facility. I was brought on as their first dedicated marketing hire, responsible for everything creative and digital across both organizations.'},
-      {label:'What That Looks Like', text:'I run six social platforms, design all graphics and promotional materials, shoot photography from trainings and matches, edit video and reels, write and send newsletters, manage the website, handle SEO, and build monthly content calendars. I also designed and wrote a <strong>14-slide parent communication deck</strong> distributed to the full FC Copa membership to explain a major national rule change.'},
-      {label:'The Results', text:'All organic, no paid advertising. Since October 2025: 5.1M Instagram views (up 1,922%), 540K accounts reached (up 106%), 3,800 new followers (up 1,200%). Performance Sports Center saw 841K views (up 1,800%), 10K interactions (up 2,500%), and 848 new followers (up 1,700%).'},
+      {label:'The Work', text:'FC Copa Academy is a competitive youth soccer organization in New Jersey. Performance Sports Center is their affiliated indoor training facility. I joined as their first dedicated marketing hire, responsible for creative and digital across both.'},
+      {label:'What That Looks Like', text:'Day to day I run six social platforms, design graphics and promotional materials, shoot photography from trainings and matches, edit video and reels, write newsletters, manage the website and handle SEO. I also designed and wrote a <strong>14-slide stakeholder communication deck</strong> distributed to the full FC Copa membership explaining a major national rule change.'},
+      {label:'The Results', text:'All organic, no paid advertising. Since October 2025: <strong>5.1M Instagram views (up 1,922%)</strong>, 540K accounts reached (up 106%), 3,800 new followers (up 1,200%). Performance Sports Center: 841K views (up 1,800%), 10K interactions (up 2,500%), 848 new followers (up 1,700%).'},
     ],
     stats: [
       {n:'5.1M', l:'Instagram Views', sub:'+1,922%'},
@@ -827,8 +812,8 @@ const MODALS = {
     ],
     stats: [
       {n:'3', l:'Professional Decks', sub:''},
-      {n:'14', l:'Slides — Copa Deck', sub:'Distributed to full membership'},
-      {n:'8', l:'Slides — Partnership Pitch', sub:'KPIs + phased rollout'},
+      {n:'14', l:'Slides Copa Deck', sub:'Distributed to full membership'},
+      {n:'8', l:'Slides Partnership Pitch', sub:'KPIs + phased rollout'},
       {n:'Full', l:'Brand Identity Deck', sub:'Pantone values included'},
     ],
     assets: [
@@ -925,15 +910,13 @@ const MODALS = {
     deliverables: 'Original illustration, brand identity, jersey and hat mockups, editorial poster series, book cover design, print layout, magazine spread, trifold brochure.',
     tools: ['Illustrator','Photoshop','InDesign','Canva'],
     sections: [
-      {label:'Center Point Angels — Sports Brand Identity', text:'A complete sports brand identity designed independently. Custom illustrated logo built from scratch: a cowboy boot and halo referencing Tyler Hubbard and Thomas Rhett\'s musical partnership. Full logo system with alternate variations, applied to a professional jersey mockup and snapback hat.'},
+      {label:'Center Point Angels Sports Brand Identity', text:'A complete sports brand identity designed independently. Custom illustrated logo built from scratch: a cowboy boot and halo referencing Tyler Hubbard and Thomas Rhett\'s musical partnership. Full logo system with alternate variations, applied to a professional jersey mockup and snapback hat.'},
       {label:'Editorial & Poster Work', text:'Three poster variations for a fictional Michel Gondry Film Festival, each built around a different object from his visual language: a VHS tape, a pocket watch, and a spotlight rig. Each has a distinct color palette and type treatment while sharing a coherent series identity.'},
       {label:'Print & Layout', text:'Full book cover redesign for 20,000 Leagues Under the Sea with original illustration and hand-lettered type. Game On editorial magazine spread with multi-column layout and photography integration. CareVirginia trifold brochure designed to production-ready specifications.'},
     ],
     stats: [
-      {n:'Custom', l:'Illustration', sub:'Every element original'},
-      {n:'Full', l:'Brand System', sub:'Logo, jersey, hat'},
+      {n:'Print', l:'& Editorial', sub:'Magazine, brochure, book cover'},
       {n:'3', l:'Poster Variations', sub:'Film Festival Series'},
-      {n:'Print', l:'& Digital Range', sub:'Book, brochure, magazine'},
     ],
     assets: [
       {type:'image', src:'images/illustration/illus-2.jpg', label:'Center Point Angels Logo'},
@@ -1022,6 +1005,7 @@ function openModal(id) {
 
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.getElementById('modal-box').scrollTop = 0;
   updateAssetNav();
 }
 
