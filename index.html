@@ -1019,6 +1019,19 @@ function openModal(id) {
 
 function buildAssetSlide(asset, idx) {
   if (asset.type === 'pdf') {
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      return `<div class="asset-slide" style="flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:2rem 1.5rem">
+        <div style="width:64px;height:64px;border-radius:12px;background:var(--maroon);display:flex;align-items:center;justify-content:center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div style="text-align:center">
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:600;color:var(--ink);margin-bottom:.3rem">${asset.label || 'Document'}</div>
+          <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.62rem;color:var(--gray)">PDF document</div>
+        </div>
+        <a href="${asset.src}" target="_blank" style="display:inline-block;padding:.65rem 1.6rem;background:var(--maroon);color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px">View PDF ↗</a>
+      </div>`;
+    }
     return `<div class="asset-slide" style="padding:0;flex-direction:column">
       <iframe src="${asset.src}" title="${asset.label || 'Document'}" style="width:100%;height:72vh;border:none;border-radius:4px 4px 0 0;display:block"></iframe>
       <div style="padding:.6rem 1rem;background:var(--bg);border-top:1px solid var(--border);border-radius:0 0 4px 4px;display:flex;align-items:center;justify-content:space-between">
