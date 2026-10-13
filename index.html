@@ -189,18 +189,15 @@ h2.sec-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-siz
 
 /* CONTACT */
 #contact{background:var(--bg)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;max-width:1100px;margin:0 auto;align-items:start}
+.contact-grid{display:flex;flex-direction:column;align-items:center;max-width:600px;margin:0 auto;text-align:center}
 .co-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2rem,3.2vw,2.8rem);letter-spacing:-.02em;line-height:1.1;margin-bottom:1.2rem;color:var(--black)}
 .co-sub{color:var(--gray);font-size:.97rem;line-height:1.78;margin-bottom:2rem}
-.co-links{display:flex;flex-direction:column;gap:.4rem}
-.clink{display:flex;align-items:center;justify-content:space-between;padding:.85rem 1.1rem;border:1.5px solid var(--border2);border-radius:4px;color:var(--gray);text-decoration:none;font-size:.88rem;font-weight:500;background:var(--white);transition:all .22s}
-.clink:hover{border-color:var(--maroon);color:var(--maroon);padding-left:1.5rem}
+.co-links{display:flex;flex-direction:column;gap:.5rem;width:100%;margin-top:2rem}
+.clink{display:grid;grid-template-columns:90px 1fr auto;align-items:center;gap:.5rem;padding:.85rem 1.2rem;border:1.5px solid var(--border2);border-radius:4px;color:var(--black);text-decoration:none;font-size:.88rem;font-weight:500;background:var(--white);transition:all .22s;text-align:left}
+.clink:hover{border-color:var(--maroon);color:var(--maroon)}
+.clink-label{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);white-space:nowrap}
+.clink-value{color:var(--gray);font-weight:400}
 .clink-arr{font-family:'DM Mono',monospace;font-size:.6rem;color:var(--maroon)}
-.co-form{display:flex;flex-direction:column;gap:.8rem}
-.co-form input,.co-form textarea{background:var(--white);border:1.5px solid var(--border2);border-radius:4px;color:var(--black);font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;padding:.85rem 1rem;outline:none;transition:border-color .2s;width:100%}
-.co-form input:focus,.co-form textarea:focus{border-color:var(--maroon)}
-.co-form textarea{min-height:110px;resize:vertical}
-.co-form input::placeholder,.co-form textarea::placeholder{color:var(--gray2)}
 
 /* FOOTER */
 footer{background:var(--black);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
@@ -299,7 +296,6 @@ footer a:hover{color:#fff}
   .hero-right{justify-content:center}
   .sec{padding:4rem 1.5rem}
   .about-grid{grid-template-columns:1fr;gap:3rem}
-  .contact-grid{grid-template-columns:1fr;gap:3rem}
   .work-grid{display:flex;flex-direction:column}
   .modal-stats{grid-template-columns:repeat(2,1fr)}
   .skills-grid{grid-template-columns:1fr}
@@ -664,24 +660,27 @@ footer a:hover{color:#fff}
 
 <!-- CONTACT -->
 <section id="contact" class="sec">
-  <div class="contact-grid">
-    <div class="reveal">
-      <div class="eyebrow">Let's Connect</div>
-      <h2 class="co-title">Ready to work together?</h2>
-      <p class="co-sub">Open to full-time creative, design, content and digital marketing opportunities. Based in New Jersey and open to remote and hybrid work.</p>
-      <div class="co-links">
-        <a href="mailto:katierygiel@comcast.net" class="clink">katierygiel@comcast.net <span class="clink-arr">→</span></a>
-        <a href="https://www.linkedin.com/in/katherinerygiel" target="_blank" class="clink">LinkedIn <span class="clink-arr">↗</span></a>
-        <a href="https://www.instagram.com/katierygielgraphics" target="_blank" class="clink">Instagram <span class="clink-arr">↗</span></a>
-      </div>
+  <div class="contact-grid reveal">
+    <div class="eyebrow" style="justify-content:center">Let's Connect</div>
+    <h2 class="co-title">Ready to work together?</h2>
+    <p class="co-sub">Open to full-time creative, design, content and digital marketing opportunities. Based in New Jersey and open to remote and hybrid work.</p>
+    <div class="co-links">
+      <a href="mailto:katierygiel@comcast.net" class="clink">
+        <span class="clink-label">Email</span>
+        <span class="clink-value">katierygiel@comcast.net</span>
+        <span class="clink-arr">→</span>
+      </a>
+      <a href="https://www.linkedin.com/in/katherinerygiel" target="_blank" class="clink">
+        <span class="clink-label">LinkedIn</span>
+        <span class="clink-value">katherinerygiel</span>
+        <span class="clink-arr">↗</span>
+      </a>
+      <a href="https://www.instagram.com/katierygielgraphics" target="_blank" class="clink">
+        <span class="clink-label">Instagram</span>
+        <span class="clink-value">@katierygielgraphics</span>
+        <span class="clink-arr">↗</span>
+      </a>
     </div>
-    <form class="co-form reveal" action="https://formspree.io/f/xdeaeabw" method="POST">
-      <input type="text" placeholder="Your Name" required/>
-      <input type="email" placeholder="Your Email" required/>
-      <input type="text" placeholder="Role / Company (optional)"/>
-      <textarea placeholder="Tell me about the opportunity..."></textarea>
-      <button type="submit" class="btn-p" style="justify-content:center">Send Message →</button>
-    </form>
   </div>
 </section>
 
