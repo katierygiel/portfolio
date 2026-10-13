@@ -241,7 +241,7 @@ footer a:hover{color:#fff}
 .modal-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin:1.4rem 0}
 .stat-box{background:var(--maroon-dim);border:1px solid rgba(111,32,53,.15);border-radius:5px;padding:.9rem .8rem;text-align:center}
 .stat-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem;color:var(--maroon);line-height:1}
-.stat-label{font-family:'DM Mono',monospace;font-size:.5rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem;line-height:1.4}
+.stat-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.6rem;color:var(--gray);text-transform:uppercase;letter-spacing:.05em;margin-top:.3rem;line-height:1.4}
 
 /* TOOLS ROW */
 .modal-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid var(--border)}
@@ -528,7 +528,7 @@ footer a:hover{color:#fff}
     <!-- 2. Presentations -->
     <a class="pc pc-b" href="#" onclick="openModal('pres');return false">
       <div class="pc-img ph-pres">
-        <img src="images/pres-cover.jpg" alt="Presentation Design"
+        <img src="images/pres-cover.png" alt="Presentation Design"
           style="width:100%;height:100%;object-fit:cover"
           onerror="this.style.display='none'"/>
         <div class="ph-inner" style="position:absolute;inset:0;opacity:.4">Presentation Design</div>
@@ -903,29 +903,23 @@ const MODALS = {
     ]
   },
   illus: {
-    tag: 'Illustration · Print Design · Brand Identity',
-    title: 'Independent & Academic Design Work',
+    tag: 'Brand Identity · Illustration · Print Design',
+    title: 'Selected Creative Work',
     role: 'Designer & Illustrator',
     year: '2023 – 2025',
-    deliverables: 'Original illustration, brand identity, jersey and hat mockups, editorial poster series, book cover design, print layout, magazine spread, trifold brochure.',
+    deliverables: 'Editorial layout, print design, book cover illustration, film festival poster series, jersey illustration.',
     tools: ['Illustrator','Photoshop','InDesign','Canva'],
     sections: [
-      {label:'Center Point Angels Sports Brand Identity', text:'A complete sports brand identity designed independently. Custom illustrated logo built from scratch: a cowboy boot and halo referencing Tyler Hubbard and Thomas Rhett\'s musical partnership. Full logo system with alternate variations, applied to a professional jersey mockup and snapback hat.'},
-      {label:'Editorial & Poster Work', text:'Three poster variations for a fictional Michel Gondry Film Festival, each built around a different object from his visual language: a VHS tape, a pocket watch, and a spotlight rig. Each has a distinct color palette and type treatment while sharing a coherent series identity.'},
-      {label:'Print & Layout', text:'Full book cover redesign for 20,000 Leagues Under the Sea with original illustration and hand-lettered type. Game On editorial magazine spread with multi-column layout and photography integration. CareVirginia trifold brochure designed to production-ready specifications.'},
-    ],
-    stats: [
-      {n:'Print', l:'& Editorial', sub:'Magazine, brochure, book cover'},
-      {n:'3', l:'Poster Variations', sub:'Film Festival Series'},
+      {label:'Print & Editorial', text:'Game On editorial magazine spread with multi-column layout and photography integration. CareVirginia trifold brochure designed to production-ready specifications.'},
+      {label:'Book Cover & Poster Work', text:'Full book cover redesign for 20,000 Leagues Under the Sea with original illustration and hand-lettered type. Three poster variations for a fictional Michel Gondry Film Festival, each built around a different object from his visual language. Each has a distinct color palette and type treatment while sharing a coherent series identity.'},
+      {label:'Illustration', text:'Original jersey and apparel illustrations created independently, exploring character, lettering, and sport-specific visual systems.'},
     ],
     assets: [
-      {type:'image', src:'images/illustration/illus-2.jpg', label:'Center Point Angels Logo'},
-      {type:'image', src:'images/illustration/illus-3.png', label:'Jersey Mockup'},
-      {type:'image', src:'images/illustration/illus-1.png', label:'Hat Mockup'},
-      {type:'image', src:'images/illustration/illus-4.png', label:'Film Festival Poster Series'},
-      {type:'image', src:'images/illustration/illus-5.png', label:'20,000 Leagues Book Cover'},
       {type:'image', src:'images/layout/layout-1.png', label:'Game On Magazine Spread'},
       {type:'image', src:'images/layout/layout-2.png', label:'CareVirginia Trifold'},
+      {type:'image', src:'images/illustration/illus-5.png', label:'20,000 Leagues Book Cover'},
+      {type:'image', src:'images/illustration/illus-4.png', label:'Film Festival Poster Series'},
+      {type:'image', src:'images/illustration/illus-2.jpg', label:'Jersey Illustration'},
     ]
   }
 };
@@ -1005,7 +999,9 @@ function openModal(id) {
 
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
-  document.getElementById('modal-box').scrollTop = 0;
+  const box = document.getElementById('modal-box');
+  box.scrollTop = 0;
+  document.getElementById('modal-overlay').scrollTop = 0;
   updateAssetNav();
 }
 
