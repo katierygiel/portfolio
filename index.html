@@ -521,29 +521,8 @@ footer a:hover{color:#fff}
       </div>
     </a>
 
-    <!-- 2. Presentations -->
-    <a class="pc pc-b" href="#" onclick="openModal('pres');return false">
-      <div class="pc-img ph-pres">
-        <img src="images/pres-cover.png" alt="Presentation Design"
-          style="width:100%;height:100%;object-fit:cover"
-          onerror="this.style.display='none'"/>
-        <div class="ph-inner" style="position:absolute;inset:0;opacity:.4">Presentation Design</div>
-      </div>
-      <span class="pc-tag">Presentation Design · Creative Services</span>
-      <div class="pc-overlay">
-        <div class="pc-ov-client">FC Copa Academy & Her Game Plan</div>
-        <div class="pc-ov-title">Decks & Strategic Proposals</div>
-      </div>
-      <div class="pc-body">
-        <div class="pc-client">FC Copa Academy & Her Game Plan</div>
-        <div class="pc-title">Decks & Strategic Proposals</div>
-        <div class="pc-desc">Stakeholder communication, partnership proposal and brand identity presentation design.</div>
-        <div class="pc-foot"><span class="pc-year">2024 – 2025</span><span class="pc-arrow">→</span></div>
-      </div>
-    </a>
-
-    <!-- 3. Her Game Plan -->
-    <a class="pc pc-c" href="#" onclick="openModal('hgp');return false">
+    <!-- 2. Her Game Plan -->
+    <a class="pc pc-b" href="#" onclick="openModal('hgp');return false">
       <div class="pc-img ph-hgp">
         <img src="images/hergame/hgp-cover.jpg" alt="Her Game Plan"
           style="width:100%;height:100%;object-fit:cover"
@@ -560,6 +539,27 @@ footer a:hover{color:#fff}
         <div class="pc-title">Brand Identity & UX Design</div>
         <div class="pc-desc">Brand system, logo, color, typography, merchandise and Figma prototype.</div>
         <div class="pc-foot"><span class="pc-year">2025</span><span class="pc-arrow">→</span></div>
+      </div>
+    </a>
+
+    <!-- 3. Presentations -->
+    <a class="pc pc-c" href="#" onclick="openModal('pres');return false">
+      <div class="pc-img ph-pres">
+        <img src="images/pres-cover.png" alt="Presentation Design"
+          style="width:100%;height:100%;object-fit:cover"
+          onerror="this.style.display='none'"/>
+        <div class="ph-inner" style="position:absolute;inset:0;opacity:.4">Presentation Design</div>
+      </div>
+      <span class="pc-tag">Presentation Design · Creative Services</span>
+      <div class="pc-overlay">
+        <div class="pc-ov-client">FC Copa Academy & Her Game Plan</div>
+        <div class="pc-ov-title">Decks & Strategic Proposals</div>
+      </div>
+      <div class="pc-body">
+        <div class="pc-client">FC Copa Academy & Her Game Plan</div>
+        <div class="pc-title">Decks & Strategic Proposals</div>
+        <div class="pc-desc">Stakeholder communication, partnership proposal and brand identity presentation design.</div>
+        <div class="pc-foot"><span class="pc-year">2024 – 2025</span><span class="pc-arrow">→</span></div>
       </div>
     </a>
 
@@ -841,6 +841,7 @@ const MODALS = {
     ],
     assets: [
       {type:'pdf', src:'pdfs/hgp-brand-presentation.pdf', label:'Her Game Plan Brand Deck'},
+      {type:'pdf', src:'pdfs/hgp-figma-to-app.pdf', label:'From Figma to Live App'},
       {type:'image', src:'images/illustration/illus-2.jpg', label:'Logo System'},
     ]
   },
